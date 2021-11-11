@@ -50,13 +50,20 @@
 
 	</nav>
 	<main class="page-content flex-fill" aria-label="Content">
+		{% if show_navbar == False %}
 		<h1> {{ title }}</h1>
+		{% endif %}
+		{% if show_navbar == True %}
+		<p> </p>
+		<br>
+		{% endif %}
 		{% if devmode == True %}
+
 		<div class="container">
 			<div class="toc-scope">
 				<div class="alert alert-warning" role="alert">
 					<h5 class="alert-heading mb-0">Warnung</h5>
-					Die Anwendung wurde im Entwicklungsmodus gestartet.
+					Die Anwendung wurde im Entwicklungsmodus gestartet. Dies stellt ein Sicherheitsrisiko dar, daher sollte im normalen Betrieb der Entwicklungsmodus abgeschaltet sein.
 				</div>
 			</div>
 		</div>

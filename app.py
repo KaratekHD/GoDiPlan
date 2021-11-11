@@ -122,9 +122,9 @@ def parse(url: str) -> str:
 # Laden der Werte aus der Konfigurationsdatei
 config = configparser.ConfigParser()
 config.read('config.ini')
-navbar = bool(config["default"]['navbar'])
-footer = bool(config["default"]['footer'])
-devmode = bool(config["development"]['devmode'])
+navbar = config["default"].getboolean("navbar")
+footer = config["default"].getboolean("footer")
+devmode = config["development"].getboolean("devmode")
 title = config["default"]['title']
 logo = config["default"]['logo']
 url = config["default"]['url']
